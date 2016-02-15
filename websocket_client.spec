@@ -4,7 +4,7 @@
 #
 Name     : websocket_client
 Version  : 0.34.0
-Release  : 4
+Release  : 5
 URL      : https://pypi.python.org/packages/source/w/websocket-client/websocket_client-0.34.0.tar.gz
 Source0  : https://pypi.python.org/packages/source/w/websocket-client/websocket_client-0.34.0.tar.gz
 Summary  : WebSocket client for python. hybi13 is supported.
