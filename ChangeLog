@@ -1,8 +1,30 @@
 ChangeLog
 ============
 
+- 0.40.0
+  - Fix opcode -> op_code (#286)
+
+- 0.39.0
+  - Shuffled around example code (#256)
+  - _send_ping graceful error handling (#262)
+  - Allow closing WebSocketApp with status/reason/timeout (#265)
+  - Support universal wheels (#267)
+  - _url: Added subnet IP address matching in no_proxy host detection (#270)
+  - fixed Incorrect encoding in continued messages python3 (#261)
+  - Pass headers for websocket handshake (#271)
+  - setup.py: Import `logging` before calling it. (#272)
+  - Implemented close code 1014 (#273)
+  - Support CA bundle specified by environment variable (#279)
+  - Response header values should not be converted to lower case (#264)
+
+- 0.38.0
+  - Exclude port 443 from host http header (#248)
+  - Cleanup code (#249)
+  - Modify a code block directive in README (#250)
+  - fixed ping/pong timeouet (#253)
+
 - 0.37.0
-  - fixed fialer that `websocket.create_connection` does not accept `origin` as a parameter (#246 )
+  - fixed failure that `websocket.create_connection` does not accept `origin` as a parameter (#246 )
 
 - 0.36.0
   - added support for using custom connection class (#235)
@@ -90,7 +112,7 @@ ChangeLog
 - 0.24.0
 
   - Supporting http-basic auth in WebSocketApp (#143)
-  - fix failer of test.testInternalRecvStrict(#141)
+  - fix failure of test.testInternalRecvStrict(#141)
   - skip utf8 validation by skip_utf8_validation argument (#137)
   - WebsocketProxyException will be raised if we got error about proxy.(#138)
 
