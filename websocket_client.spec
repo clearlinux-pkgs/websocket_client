@@ -4,7 +4,7 @@
 #
 Name     : websocket_client
 Version  : 0.40.0
-Release  : 16
+Release  : 17
 URL      : http://pypi.debian.net/websocket_client/websocket_client-0.40.0.tar.gz
 Source0  : http://pypi.debian.net/websocket_client/websocket_client-0.40.0.tar.gz
 Summary  : WebSocket client for python. hybi13 is supported.
@@ -12,6 +12,7 @@ Group    : Development/Tools
 License  : GPL-3.0 LGPL-3.0
 Requires: websocket_client-bin
 Requires: websocket_client-python
+Requires: backports.ssl_match_hostname
 Requires: six
 BuildRequires : pbr
 BuildRequires : pip
@@ -47,7 +48,7 @@ python components for the websocket_client package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1489785981
+export SOURCE_DATE_EPOCH=1490722951
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -57,10 +58,13 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.6/site-packages python3 setup.py test
 %install
-export SOURCE_DATE_EPOCH=1489785981
+export SOURCE_DATE_EPOCH=1490722951
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+echo ----[ mark ]----
+cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
+echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
