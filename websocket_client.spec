@@ -4,7 +4,7 @@
 #
 Name     : websocket_client
 Version  : 0.40.0
-Release  : 17
+Release  : 18
 URL      : http://pypi.debian.net/websocket_client/websocket_client-0.40.0.tar.gz
 Source0  : http://pypi.debian.net/websocket_client/websocket_client-0.40.0.tar.gz
 Summary  : WebSocket client for python. hybi13 is supported.
