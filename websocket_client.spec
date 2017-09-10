@@ -4,13 +4,14 @@
 #
 Name     : websocket_client
 Version  : 0.44.0
-Release  : 20
+Release  : 21
 URL      : http://pypi.debian.net/websocket_client/websocket_client-0.44.0.tar.gz
 Source0  : http://pypi.debian.net/websocket_client/websocket_client-0.44.0.tar.gz
 Summary  : WebSocket client for python. hybi13 is supported.
 Group    : Development/Tools
 License  : LGPL-3.0
 Requires: websocket_client-bin
+Requires: websocket_client-legacypython
 Requires: websocket_client-python
 Requires: six
 BuildRequires : pbr
@@ -21,10 +22,8 @@ BuildRequires : setuptools
 BuildRequires : six
 
 %description
-=================
 websocket-client
-=================
-**Our repository has moved to https://github.com/websocket-client/websocket-client**
+        =================
 
 %package bin
 Summary: bin components for the websocket_client package.
@@ -34,9 +33,18 @@ Group: Binaries
 bin components for the websocket_client package.
 
 
+%package legacypython
+Summary: legacypython components for the websocket_client package.
+Group: Default
+
+%description legacypython
+legacypython components for the websocket_client package.
+
+
 %package python
 Summary: python components for the websocket_client package.
 Group: Default
+Requires: websocket_client-legacypython
 
 %description python
 python components for the websocket_client package.
@@ -50,7 +58,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1498222212
+export SOURCE_DATE_EPOCH=1505073833
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -60,7 +68,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.6/site-packages python3 setup.py test
 %install
-export SOURCE_DATE_EPOCH=1498222212
+export SOURCE_DATE_EPOCH=1505073833
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
@@ -75,7 +83,10 @@ echo ----[ mark ]----
 %defattr(-,root,root,-)
 /usr/bin/wsdump.py
 
-%files python
+%files legacypython
 %defattr(-,root,root,-)
 /usr/lib/python2*/*
+
+%files python
+%defattr(-,root,root,-)
 /usr/lib/python3*/*
