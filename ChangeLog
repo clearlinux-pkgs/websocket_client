@@ -1,6 +1,20 @@
 ChangeLog
 ============
 
+- 0.45.0
+
+  - change license to LGP v2.1
+  - allow reuse of WebsocketApp.run_forever (#365)
+  - Update example for python3 (#360)
+  - add lock to recv function (#356)
+  - Parse close frame response correctly when reason present (#354)
+  - Fix SSL: SSLV3_ALERT_HANDSHAKE_FAILURE on Debian Stretch (#353)
+  - Wrap socket.gaierror with subclass of WebsocketException (#352)
+  - Resolve a proxy issue and a connection error (#345)
+  - Allow empty Host header value (#369)
+  - Fix undefined variable (#347)
+  - fix: getting a value with the key 'ca_certs' in sslopt dict (#326)
+
 - 0.44.0
 
   -renames key in sslopt dict (#326)
