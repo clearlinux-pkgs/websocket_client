@@ -4,7 +4,7 @@
 #
 Name     : websocket_client
 Version  : 0.47.0
-Release  : 32
+Release  : 33
 URL      : http://pypi.debian.net/websocket_client/websocket_client-0.47.0.tar.gz
 Source0  : http://pypi.debian.net/websocket_client/websocket_client-0.47.0.tar.gz
 Summary  : WebSocket client for python. hybi13 is supported.
@@ -12,11 +12,11 @@ Group    : Development/Tools
 License  : LGPL-2.1
 Requires: websocket_client-bin
 Requires: websocket_client-python3
+Requires: websocket_client-license
 Requires: websocket_client-python
 Requires: six
 BuildRequires : pbr
 BuildRequires : pip
-
 BuildRequires : python3-dev
 BuildRequires : setuptools
 BuildRequires : six
@@ -45,9 +45,18 @@ websocket-client
 %package bin
 Summary: bin components for the websocket_client package.
 Group: Binaries
+Requires: websocket_client-license
 
 %description bin
 bin components for the websocket_client package.
+
+
+%package license
+Summary: license components for the websocket_client package.
+Group: Default
+
+%description license
+license components for the websocket_client package.
 
 
 %package python
@@ -76,7 +85,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1520970052
+export SOURCE_DATE_EPOCH=1529094842
 python3 setup.py build -b py3
 
 %check
@@ -86,6 +95,8 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.6/site-packages python3 setup.py test
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/websocket_client
+cp LICENSE %{buildroot}/usr/share/doc/websocket_client/LICENSE
 python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -97,6 +108,10 @@ echo ----[ mark ]----
 %files bin
 %defattr(-,root,root,-)
 /usr/bin/wsdump.py
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/websocket_client/LICENSE
 
 %files python
 %defattr(-,root,root,-)
