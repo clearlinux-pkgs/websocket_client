@@ -1,6 +1,18 @@
 ChangeLog
 ============
 
+- 0.49.0
+
+  - WebSocketApp class to make it inheritable (#442)
+  - Add option to disable sending the Origin header (#459)
+  - Websocket.close() meaning of "close status: XXXXX" (#414)
+  - Enable multithreading protection with ping_interval (#448)
+  - reset WebsocketApp.sock (#450)
+  - websocket.enableTrace not working (#455)
+  - AttributeError: 'module' object has no attribute 'NullHandler' (#443)
+  - WebSocketBadStatusException "not enough arguments for format string" (#454)
+  - handshake should deal with None in headers (#432)
+
 - 0.48.0
 
   - Add NullHandler to logger to fix python 2 issue. (#400)
