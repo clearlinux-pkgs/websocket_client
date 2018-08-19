@@ -4,7 +4,7 @@
 #
 Name     : websocket_client
 Version  : 0.51.0
-Release  : 44
+Release  : 45
 URL      : https://files.pythonhosted.org/packages/bb/ae/4ff2ae1f722d0c23dc4cdf74a4e05b0d1bbe752dc28620b9fe05c53e61aa/websocket_client-0.51.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/bb/ae/4ff2ae1f722d0c23dc4cdf74a4e05b0d1bbe752dc28620b9fe05c53e61aa/websocket_client-0.51.0.tar.gz
 Summary  : WebSocket client for Python. hybi13 is supported.
@@ -82,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1534715127
+export SOURCE_DATE_EPOCH=1534717160
 python3 setup.py build -b py3
 
 %check
