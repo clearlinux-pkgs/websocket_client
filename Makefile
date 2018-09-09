@@ -1,5 +1,5 @@
 PKG_NAME := websocket_client
-URL = https://files.pythonhosted.org/packages/30/c8/82ac8ae45073034af51c6296c35346caab4fa26456c19f9cf64d2b978971/websocket_client-0.52.0.tar.gz
+URL = https://files.pythonhosted.org/packages/fb/1f/9acd71b77e66fafb19cfb023e50cbb7ed2c3be3c72db999162bd36c518c4/websocket_client-0.53.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
