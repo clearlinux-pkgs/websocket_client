@@ -1,6 +1,15 @@
 ChangeLog
 ============
 
+- 0.54.0
+
+  - Change license from LGPL to BSD.
+  - Status return for WebSocketApp.run_forever() (#492)
+  - Handle redirects in handshake (#491)
+  - Make proxy_type option available in WebSocketApp.run_forever() (#486)
+  - Fix typo in supress_origin (#485)
+  - WebSocketApp's on_close never emits status code or reason (#479)
+
 - 0.53.0
 
   - on_open() missing 1 required positional argument: 'ws' (#471)
