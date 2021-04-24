@@ -4,7 +4,7 @@
 #
 Name     : websocket_client
 Version  : 0.58.0
-Release  : 69
+Release  : 70
 URL      : https://files.pythonhosted.org/packages/4a/df/112c278ba1ead96786d24d973429ce1e1a2c86b9843183d9f8ef8c6330d7/websocket_client-0.58.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/4a/df/112c278ba1ead96786d24d973429ce1e1a2c86b9843183d9f8ef8c6330d7/websocket_client-0.58.0.tar.gz
 Summary  : WebSocket client for Python with low level API options
